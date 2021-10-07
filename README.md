@@ -12,9 +12,12 @@ Spatial transformer networks are a generalization of differentiable attention to
 
 Goals of the project:
 
-- Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
-- Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
+- 1. Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
+- 2. Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
 
-## 
+## 1. Using CoordConv layers
 
-![alt text](https://github.com/vicsesi/Pytorch-STN/imgs/image.jpg?raw=true)
+![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
+
+## 2. Performance Comparison 
+
