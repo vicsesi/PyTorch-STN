@@ -45,6 +45,10 @@ def train(epoch, model, train_loader, device, optimizer):
 
 def test(model, test_loader, device):
 
+    test_loss = 0.0
+    class_correct = [0] * 10
+    class_total = [0] * 10
+    conf_matrix = np.zeros((10, 10))
     with torch.no_grad():
         model.eval()
         test_loss = 0
@@ -57,10 +61,34 @@ def test(model, test_loader, device):
             # get the index of the max log-probability
             pred = output.max(1, keepdim=True)[1]
             correct += pred.eq(target.view_as(pred)).sum().item()
-        test_loss /= len(test_loader.dataset)
-        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'
-              .format(test_loss, correct, len(test_loader.dataset),
-                      100. * correct / len(test_loader.dataset)))
+
+            # Reference: https://www.kaggle.com/jcardenzana/mnist-pytorch-convolutional-neural-nets
+            correct_tensor = pred.eq(target.view_as(pred))
+            correct_2 = np.squeeze(correct_tensor.numpy()) if device == "cpu" else np.squeeze(correct_tensor.cpu().numpy())
+            for i in range(target.size(0)):
+                label = target.data[i]
+                class_correct[label] += correct_2[i].item()
+                class_total[label] += 1
+                # Update confusion matrix
+                conf_matrix[label][pred.data[i]] += 1
+
+    for i in range(10):
+        if class_total[i] > 0:
+            print('\nTest Accuracy of %3s: %2d%% (%2d/%2d)' % (
+                i, 100 * class_correct[i] / class_total[i],
+                np.sum(class_correct[i]), np.sum(class_total[i])))
+
+    test_loss /= len(test_loader.dataset)
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'
+          .format(test_loss, correct, len(test_loader.dataset),
+                  100. * correct / len(test_loader.dataset)))
+
+    import seaborn as sns
+    plt.subplots(figsize=(10, 9))
+    ax = sns.heatmap(conf_matrix, annot=True, vmax=20)
+    ax.set_xlabel('Predicted')
+    ax.set_ylabel('True')
+    plt.savefig('../imgs/confusion_matrix.png')
 
 
 def convert_image_np(inp):

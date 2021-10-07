@@ -1,12 +1,13 @@
 import torch
 import torch.nn as nn
+from addcoords import AddCoords
 import torch.nn.modules.conv as conv
 
 
 class CoordConv2d(conv.Conv2d):
 
     def __init__(self, in_channels, out_channels, kernel_size, stride=1,
-                 padding=0, dilation=1, groups=1, bias=True, with_r=False, use_cuda=True):
+                 padding=0, dilation=1, groups=1, bias=True, with_r=False, use_cuda=False):
 
         super(CoordConv2d, self).__init__(in_channels, out_channels, kernel_size,
                                           stride, padding, dilation, groups, bias)
