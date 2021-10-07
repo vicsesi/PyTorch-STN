@@ -43,7 +43,7 @@ Remember that you can set the number of epochs modfiying following flag `--epoch
 
 The proposed CoordConv layer is a simple extension to the standard convolutional layer. Convolutional layers are used in a myriad of applications because they often work well, perhaps due to some combination of three factors: 
 - they have relatively few learned parameters.
-- they are fast to compute on modern GPUs
+- they are fast to compute on modern GPUs.
 - they learn a function that is translation invariant. 
 
 Following figure shows a comparison of 2D convolutional and CoordConv layers.
