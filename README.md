@@ -53,7 +53,7 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 | Conv | 10 epochs | 0.0600 | 9800/10000 (98%) | 
 | Conv | 25 epochs | 0.0349 | 9890/10000 (99%) | 
 | CoordConv | 5 epochs | 0.1046 | 9697/10000 (97%) | 
-| CoordConv | 10 epochs |  | 
+| CoordConv | 10 epochs | 0.0579 | 9834/10000 (98%) | 
 | CoordConv | 25 epochs |  |  | 
 
 
