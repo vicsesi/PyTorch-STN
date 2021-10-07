@@ -14,3 +14,7 @@ Goals of the project:
 
 - Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
 - Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
+
+## 
+
+![alt text](https://github.com/vicsesi/Pytorch-STN/imgs/image.jpg?raw=true)
