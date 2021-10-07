@@ -30,7 +30,7 @@ docker build -t pytorch-stn .
 
 Train and test the STN:
 ```sh
-docker run -v "$(pwd):/app" pytorch-stn --epochs=1
+docker run -v "$(pwd):/app" pytorch-stn --epochs=10
 ```
 
 Remember that you can set the number of epochs modfiying following flag `--epochs`. Note that as a result, the output will be exported as `imgs/stn.png`, where you can visualize the batch of input images and the corresponding transformed batch using STN.
