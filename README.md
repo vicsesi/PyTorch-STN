@@ -12,7 +12,7 @@ Spatial transformer networks are a generalization of differentiable attention to
 
 ## Requirements
 
-- 
+- [Docker](https://www.docker.com/)
 
 Goals of the project:
 
