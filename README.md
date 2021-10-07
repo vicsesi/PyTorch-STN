@@ -36,9 +36,9 @@ Test the STN, note that as a result, the output of the spatial transformers will
 docker run -v "$(pwd):/app" pytorch-stn --stage='test'
 ```
 
-## 1. Using CoordConv layers
+## Experiments using CoordConv layers
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-## 2. Performance Comparison 
+## Performance Comparison 
 
