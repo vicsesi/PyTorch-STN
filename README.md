@@ -16,7 +16,7 @@ Goals of the project:
 
 1. Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
 2. Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
-3. Explore the latest advancements and new ideas that might achieve better performance than conventional STNs.
+3. Explore new ideas that might achieve better performance than conventional STNs.
 
 ## Installation
 
