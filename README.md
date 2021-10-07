@@ -50,7 +50,7 @@ Following figure shows a comparison of 2D convolutional and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, across diferent range of epochs during the training step. Moreover, we will evaluate the different models computing the average loss and accuracy. Following tables shows the results:
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, across diferent range of epochs during the training. Moreover, we will evaluate the different models computing the average loss and accuracy. Following tables shows the results:
 
 | Layer | Training epochs | Average loss | Accuracy
 | :---: | :---: | :---: | :---: |
