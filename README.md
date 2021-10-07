@@ -21,7 +21,7 @@ Goals of the project:
 
 ## Usage
 
-Set up the environment building a docker image from the Dockerfile:
+Set up the environment:
 ```sh
 docker build -t pytorch-stn . 
 ```
