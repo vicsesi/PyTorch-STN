@@ -1,5 +1,3 @@
-# Spatial Transformer Networks in PyTorch
-
 ## Files
 
 - `main.py`: acts as the point of execution.
