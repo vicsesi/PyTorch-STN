@@ -15,20 +15,25 @@ Goals of the project:
 1. Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
 2. Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
 
-## Requirements
+## Installation
 
 - [Docker](https://docs.docker.com/get-docker)
 
-## Run
+## Usage
 
 Set up the environment building a docker image from the Dockerfile:
 ```sh
 docker build -t pytorch-stn . 
 ```
 
-Train and test the STN by running the docker image:
+Train the STN:
 ```sh
-docker run -it pytorch-stn
+ docker run pytorch-stn --stage='train' --epochs=1
+```
+
+Test the STN:
+```sh
+ docker run pytorch-stn --stage='test'
 ```
 
 ## 1. Using CoordConv layers
