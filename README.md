@@ -2,9 +2,9 @@
 
 ## References
 
-DeepMind paper: https://arxiv.org/abs/1506.02025
+DeepMind paper: https://arxiv.org/abs/1506.02025.
 
-PyTorch tutorial: https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html
+PyTorch tutorial: https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html.
 
 ## Description
 
