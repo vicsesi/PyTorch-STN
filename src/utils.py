@@ -1,5 +1,8 @@
 import torch
+import torchvision
+import numpy as np
 import torch.nn.functional as F
+import matplotlib.pyplot as plt
 from torchvision import datasets, transforms
 
 
@@ -70,7 +73,7 @@ def convert_image_np(inp):
     return inp
 
 
-def visualize_stn(model, device):
+def visualize_stn(model, test_loader, device):
 
     """
     We want to visualize the output of the spatial transformers layer
@@ -92,3 +95,4 @@ def visualize_stn(model, device):
         axarr[0].set_title('Dataset Images')
         axarr[1].imshow(out_grid)
         axarr[1].set_title('Transformed Images')
+    plt.savefig('../imgs/stn.png')
