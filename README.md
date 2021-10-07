@@ -17,9 +17,7 @@ Goals of the project:
 
 ## Requirements
 
-Docker is an open platform for developing, shipping, and running applications. Allow us to separate the applications from the infrastructure, reducing the delay between writing code and running it. Refer to the following link and choose the best installation:
-
-- Get Docker: https://docs.docker.com/get-docker
+- [Docker](https://docs.docker.com/get-docker)
 
 ## 1. Using CoordConv layers
 
