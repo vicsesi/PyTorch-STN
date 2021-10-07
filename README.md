@@ -19,6 +19,18 @@ Goals of the project:
 
 - [Docker](https://docs.docker.com/get-docker)
 
+## Run
+
+Set up the environment building a docker image from the Dockerfile:
+```sh
+docker build -t pytorch-stn . 
+```
+
+Train and test the STN by running the docker image:
+```sh
+docker run -it pytorch-stn
+```
+
 ## 1. Using CoordConv layers
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
