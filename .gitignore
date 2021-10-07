@@ -1,4 +1,5 @@
 .idea/
 src/MNIST
 imgs/stn.png
+imgs/confusion_matrix.png.png
 src/__pycache__/
