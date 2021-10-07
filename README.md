@@ -26,12 +26,12 @@ Set up the environment:
 docker build -t pytorch-stn . 
 ```
 
-Train the STN:
+Train the STN, remeber that you can set the number of epochs modfiying following flag `--epochs`.
 ```sh
 docker run pytorch-stn --stage='train' --epochs=1
 ```
 
-Test the STN:
+Test the STN, note that as a result, the output of the spatial transformers will be exported as `imgs/stn.png`.
 ```sh
 docker run -v "$(pwd):/app" pytorch-stn --stage='test'
 ```
