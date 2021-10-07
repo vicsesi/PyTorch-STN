@@ -1,5 +1,7 @@
 # Spatial Transformer Networks in PyTorch
 
+Reference: https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html
+
 Spatial transformer networks are a generalization of differentiable attention to any spatial transformation. Spatial transformer networks (STN for short) allow a neural network to learn how to perform spatial transformations on the input image in order to enhance the geometric invariance of the model. Project goals:
 
 - Ivestigate if using CoordConv layers instead of standard Conv will help to improve the performance of the baseline.
