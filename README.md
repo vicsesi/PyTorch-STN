@@ -12,7 +12,9 @@ Spatial transformer networks are a generalization of differentiable attention to
 
 ## Requirements
 
-- [Docker](https://www.docker.com/)
+Docker is an open platform for developing, shipping, and running applications. Allow us to separate the applications from the infrastructure, reducing the delay between writing code and running it. Refer to the following link and choose the best installation:
+
+- Get Docker: https://docs.docker.com/get-docker
 
 Goals of the project:
 
