@@ -35,11 +35,19 @@ docker run -v "$(pwd):/app" pytorch-stn --epochs=10
 
 Remember that you can set the number of epochs modfiying following flag `--epochs`. Note that as a result, the output will be exported as `imgs/stn.png`, where you can visualize the batch of input images and the corresponding transformed batch using STN.
 
-## Experiments using CoordConv layers
+## Experiments
 
 The proposed CoordConv layer is a simple extension to the standard convolutional layer. Convolutional layers are used in a myriad of applications because they often work well, perhaps due to some combination of three factors: they have relatively few learned parameters, they are fast to compute on modern GPUs, and they learn a function that is translation invariant. Following figure shows a comparison of 2D convolutional and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-## Performance Comparison 
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, across diferent range of epochs during the training step. Moreover, we will evaluate the different models computing the average loss and accuracy. Following tables shows the results:
 
+| Layer | Training epochs | Average loss | Accuracy
+| :---: | :---: | :---: | :---: |
+| Conv | 5 epochs | 0.0767 | 9770/10000 (98%) | 
+| Conv | 10 epochs |  0.0600 | 9800/10000 (98%) | 
+| Conv | 25 epochs |  |  | 
+| CoordConv | 5 epochs |  | | 
+| CoordConv | 10 epochs |  | 
+| CoordConv | 25 epochs |  |  | 
