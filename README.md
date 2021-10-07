@@ -28,12 +28,12 @@ docker build -t pytorch-stn .
 
 Train the STN:
 ```sh
- docker run pytorch-stn --stage='train' --epochs=1
+docker run pytorch-stn --stage='train' --epochs=1
 ```
 
 Test the STN:
 ```sh
- docker run pytorch-stn --stage='test'
+docker run -v "$(pwd):/app" pytorch-stn --stage='test'
 ```
 
 ## 1. Using CoordConv layers
