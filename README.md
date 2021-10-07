@@ -12,8 +12,8 @@ Spatial transformer networks are a generalization of differentiable attention to
 
 Goals of the project:
 
-- 1. Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
-- 2. Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
+1. Investigate if using CoordConv layers instead of standard Conv will help to improve the performance.
+2. Compare the performance of the new model in evaluation metric and motivate the choice of metrics.
 
 ## Requirements
 
