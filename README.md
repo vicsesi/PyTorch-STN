@@ -47,8 +47,8 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 | Layer | Training epochs | Average loss | Accuracy
 | :---: | :---: | :---: | :---: |
 | Conv | 5 epochs | 0.0767 | 9770/10000 (98%) | 
-| Conv | 10 epochs |  0.0600 | 9800/10000 (98%) | 
-| Conv | 25 epochs |  |  | 
+| Conv | 10 epochs | 0.0600 | 9800/10000 (98%) | 
+| Conv | 25 epochs | 0.0349 | 9890/10000 (99%) | 
 | CoordConv | 5 epochs |  | | 
 | CoordConv | 10 epochs |  | 
 | CoordConv | 25 epochs |  |  | 
