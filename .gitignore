@@ -1,1 +1,4 @@
 .idea/
+src/MNIST
+imgs/stn.png
+src/__pycache__/
