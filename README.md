@@ -34,7 +34,7 @@ docker build -t pytorch-stn .
 
 Train and test the STN:
 ```sh
-docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=10
+docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=20
 ```
 
 Inputs arguments:
@@ -53,7 +53,7 @@ The proposed CoordConv layer is a simple extension to the standard convolutional
 - they are fast to compute on modern GPUs.
 - they learn a function that is translation invariant. 
 
-Following figure shows a comparison of 2D convolutional and CoordConv layers.
+Following figure shows a comparison of 2D Conv and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
