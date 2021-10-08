@@ -67,7 +67,7 @@ class Net(nn.Module):
         if self.layer == 'conv':
             x = F.relu(F.max_pool2d(self.conv1(x), 2))
             x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
-        if layer == 'coordconv':
+        if self.layer == 'coordconv':
             x = F.relu(F.max_pool2d(self.coordconv1(x), 2))
             x = F.relu(F.max_pool2d(self.conv2_drop(self.coordconv2(x)), 2))
         x = x.view(-1, 320)
