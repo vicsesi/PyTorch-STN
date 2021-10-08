@@ -34,7 +34,7 @@ docker build -t pytorch-stn .
 
 Train and test the STN:
 ```sh
-docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=10
+docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=20
 ```
 
 Inputs arguments:
