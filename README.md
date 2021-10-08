@@ -44,7 +44,7 @@ Inputs arguments:
 
 Output images: 
 - `imgs/stn.png`: visualize the batch of input images and the corresponding transformed batch using STN
-- `imgs/cm.png`:  number of predictions are summarized with count values and broken down by each class.
+- `imgs/cm.png`: confusion matrix where number of predictions are summarized with count values and broken down by each class.
 
 ## Experiments
 
