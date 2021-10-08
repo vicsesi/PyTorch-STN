@@ -88,7 +88,7 @@ def test(model, test_loader, device):
     ax = sns.heatmap(conf_matrix, annot=True, vmax=20)
     ax.set_xlabel('Predicted')
     ax.set_ylabel('True')
-    plt.savefig('../imgs/confusion_matrix.png')
+    plt.savefig('../imgs/cm.png')
 
 
 def convert_image_np(inp):

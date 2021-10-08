@@ -8,6 +8,7 @@ from utils import get_test_loader, visualize_stn
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int)
+parser.add_argument('--layer', type=string)
 args = parser.parse_args()
 
 opener = urllib.request.build_opener()
@@ -17,7 +18,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 train_loader = get_train_loader()
 test_loader = get_test_loader()
-model = Net().to(device)
+model = Net(ars.layer).to(device)
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 for epoch in range(1, args.epochs + 1):
