@@ -62,7 +62,7 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 | Layer | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Conv | 99% | 99% | 98% | 99% | 99% | 98% | 98% | 97% | 98% | 98% |
-| CoordConv | % | % | % | % | % | % | % | % | % | 8% |
+| CoordConv | % | % | % | % | % | % | % | % | % | % |
 
 | Layer | Average loss | Accuracy |
 | :---: | :---: | :---: |
