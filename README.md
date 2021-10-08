@@ -34,10 +34,17 @@ docker build -t pytorch-stn .
 
 Train and test the STN:
 ```sh
-docker run -v "$(pwd):/app" pytorch-stn --epochs=10
+docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=10
 ```
 
-Remember that you can set the number of epochs modfiying following flag `--epochs`. Note that as a result, the output will be exported as `imgs/stn.png`, where you can visualize the batch of input images and the corresponding transformed batch using STN.
+Inputs arguments:
+
+- `--layer`: string, options: {`conv`, `coordconv`}.
+- `--epochs`: integer, must be a positive number.
+
+Output images: 
+- `imgs/stn.png`: visualize the batch of input images and the corresponding transformed batch using STN
+- `imgs/cm.png`:  number of predictions are summarized with count values and broken down by each class.
 
 ## Experiments
 
@@ -50,16 +57,13 @@ Following figure shows a comparison of 2D convolutional and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, across diferent range of epochs during the training. Moreover, we will evaluate the different models computing the average loss and accuracy. Following tables shows the results:
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, with 20 epochs during the training. We will evaluate the accuracy for each number in the test set. Following tables shows the results:
 
-| Layer | Training epochs | Average loss | Accuracy
-| :---: | :---: | :---: | :---: |
-| Conv | 5 epochs | 0.0767 | 9770/10000 (98%) | 
-| Conv | 10 epochs | 0.0600 | 9800/10000 (98%) | 
-| Conv | 25 epochs | 0.0349 | 9890/10000 (99%) | 
-| CoordConv | 5 epochs | 0.1046 | 9697/10000 (97%) | 
-| CoordConv | 10 epochs | 0.0579 | 9834/10000 (98%) | 
-| CoordConv | 25 epochs |  |  | 
+| Layer | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Loss | Acc |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+| Conv | 99% | 99% | 98% | 98% | 99% | 99% | 98% | 97% | 98% | 96% | 0.0419 | 99%
+| CoordConv | 99% | 99% | 98% | 98% | 98% | 99% | 98% | 98% | 98% | 98% | 0.0367 | 99%
 
-
-
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_20.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_20.png?raw=true)
