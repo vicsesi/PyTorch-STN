@@ -97,4 +97,4 @@ We will explore if using Leaky ReLU activation function instead of ReLU in the s
 | :-------------------------:|:-------------------------:
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_leakyrelu_50.png?raw=true) |
 
-We observed that using Leaky ReLU activation functions in STN, doesn't improve the performance in classification task. Change the ReLU activation function by Leaky ReLU, doesn't affect to the performance.
+We observed that using Leaky ReLU activation functions in STN, doesn't improve the performance in classification task. Change the ReLU activation function by Leaky ReLU, doesn't affect significantly to the performance.
