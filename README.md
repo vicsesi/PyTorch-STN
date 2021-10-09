@@ -66,8 +66,8 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 
 | Layer | Average loss | Accuracy |
 | :---: | :---: | :---: |
-| Conv | 0.0296 | 9921/10000 (%) |
-| CoordConv | 0.0312 | 9908/10000 (%) |
+| Conv | 0.0296 | 9921/10000 (99%) |
+| CoordConv | 0.0312 | 9908/10000 (99%) |
 
 As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the predictions broken down by each number.
 
