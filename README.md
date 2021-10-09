@@ -84,12 +84,12 @@ In image classification we don't expect see much improvement, because Conv layer
 
 We will explore if using Leaky ReLU activation function instead of ReLU in the spatial transformer network, we could improve the performance. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same approach than the previous experiments.
 
-| Function | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| Activation | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Leaky ReLU | 99% | 99% | 99% | 99% | 99% | 98% | 99% | 99% | 99% | 98% |
 
 
-| Function | Average loss | Accuracy |
+| Activation | Average loss | Accuracy |
 | :---: | :---: | :---: |
 | Leaky ReLU  | 0.0293 | 9913/10000 (99%) |
 
