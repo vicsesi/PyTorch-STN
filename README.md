@@ -40,6 +40,7 @@ docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=20
 Inputs arguments:
 
 - `--layer`: string, options: {`conv`, `coordconv`}.
+- `--function`: string, options: {`leakyrelu`}.
 - `--epochs`: integer, must be a positive number.
 
 Output images: 
