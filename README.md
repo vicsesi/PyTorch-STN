@@ -79,5 +79,3 @@ For this image classification problem, using the CoordConv layer doesn't improve
 
 
 ## Exploring new ideas
-
-Spatial Transformerr Netwirks can be placed into CNNs to benefit various tasks. A spatial transformer crops out, transforms and scales the region of interest in the sample.
