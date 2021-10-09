@@ -76,8 +76,6 @@ As we can see on the previous tables, the performances using Conv and CoordConv 
 
 For this image classification problem, using the CoordConv layer doesn't improve the performance in classification task. Although the previous tables shows that the accuracy is slightly worse in predictions with CoordConv layer during 50 training epochs, we've also evaluated the performance with less number of training epochs. All of the experiments shown that the accuracy does not improve considerably using CoordConv layers.
 
-In image classification we don't expect see much improvement, because Conv layers are actually designed to be spatially invariant. In image classification task, is not important to know in the image where object is, given that we want just to know what the image is.
-
 ## Using Leaky ReLU activation function
 
 We will try to boost the performance, using Leaky ReLU activation function instead of ReLU in the spatial transformer network. We will include CoordConv layers as well. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. Let's verify if this condition could be a benefit to improve the performance. We will evaluate the performance following the same methodology than the previous experiments.
