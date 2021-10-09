@@ -26,3 +26,5 @@ for epoch in range(1, args.epochs + 1):
 
 test(model, test_loader, device)
 visualize_stn(model, test_loader, device)
+del model
+del optimizer
