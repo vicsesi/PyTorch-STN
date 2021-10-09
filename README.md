@@ -71,4 +71,4 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 
 | Confusion Matrix Conv |  Confusion Matrix CoordConv |  
 | :-------------------------:|:-------------------------:
-| ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_20.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_20.png?raw=true) |
+| ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm.png?raw=true) |
