@@ -6,7 +6,7 @@ from coordconv2d import CoordConv2d
 
 class Net(nn.Module):
 
-    def __init__(self, layer):
+    def __init__(self, layer, function):
 
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
@@ -15,20 +15,30 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(320, 50)
         self.fc2 = nn.Linear(50, 10)
         # Spatial transformer localization-network
-        self.localization = nn.Sequential(
-            nn.Conv2d(1, 8, kernel_size=7),
-            nn.MaxPool2d(2, stride=2),
-            nn.ReLU(True),
-            nn.Conv2d(8, 10, kernel_size=5),
-            nn.MaxPool2d(2, stride=2),
-            nn.ReLU(True)
-        )
         if layer == 'coordconv':
             self.localization = nn.Sequential(
                 CoordConv2d(1, 8, kernel_size=7),
                 nn.MaxPool2d(2, stride=2),
                 nn.ReLU(True),
                 CoordConv2d(8, 10, kernel_size=5),
+                nn.MaxPool2d(2, stride=2),
+                nn.ReLU(True)
+            )
+        elif function == 'leakyrelu':
+            self.localization = nn.Sequential(
+                CoordConv2d(1, 8, kernel_size=7),
+                nn.MaxPool2d(2, stride=2),
+                nn.LeakyReLU(True),
+                CoordConv2d(8, 10, kernel_size=5),
+                nn.MaxPool2d(2, stride=2),
+                nn.LeakyReLU(True)
+            )
+        else:
+            self.localization = nn.Sequential(
+                nn.Conv2d(1, 8, kernel_size=7),
+                nn.MaxPool2d(2, stride=2),
+                nn.ReLU(True),
+                nn.Conv2d(8, 10, kernel_size=5),
                 nn.MaxPool2d(2, stride=2),
                 nn.ReLU(True)
             )
