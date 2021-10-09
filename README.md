@@ -80,7 +80,7 @@ For this image classification problem, using the CoordConv layer doesn't improve
 
 In image classification we don't expect see much improvement, because Conv layers are actually designed to be spatially invariant. In image classification task, is not important to know in the image where object is, given that we want just to know what the image is.
 
-## Exploring new ideas
+## Using Leaky ReLU activation function
 
 We will try to boost the performance, using Leaky ReLU activation function instead of ReLU in the spatial transformer network. We will include CoordConv layers as well. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. Let's verify if this condition could be a benefit to improve the performance. We will evaluate the performance following the same methodology than the previous experiments.
 
