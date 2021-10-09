@@ -57,7 +57,7 @@ Following figure shows a comparison of 2D Conv and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, with 50 epochs during the training. We will evaluate the accuracy for each number in MNIST dataset, and the average loss and accuracy for the whole set. Following tables shows the results:
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers during 50 epochs. We will evaluate the accuracy for each number in MNIST dataset, and the average loss and the accuracy for the whole test set. Following tables shows the results:
 
 | Layer | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -66,9 +66,17 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 
 | Layer | Average loss | Accuracy |
 | :---: | :---: | :---: |
-| Conv | 0.0296 | 9921/10000 (%) |
-| CoordConv | 0.0312 | 9908/10000 (%) |
+| Conv | 0.0296 | 9921/10000 (99%) |
+| CoordConv | 0.0312 | 9908/10000 (99%) |
+
+As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the predictions broken down by each number.
 
 | Confusion Matrix Conv |  Confusion Matrix CoordConv |  
 | :-------------------------:|:-------------------------:
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_50.png?raw=true) |
+
+For this image classification problem, using the CoordConv layer doesn't improve the performance in classification task. Although the previous tables shows that the accuracy is slightly worse in predictions with CoordConv layer during 50 epochs, we've also evaluated the performance with less number of epochs. All of the experiments shown that the accuracy does not improve considerably using CoordConv layers.
+
+In image classification we don't expect see much improvement, because Conv layers are actually designed to be spatially invariant. In image classification task, is not important to know in the image where object is, given that we want just to know what the image is.
+
+## Exploring new ideas
