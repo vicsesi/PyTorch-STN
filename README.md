@@ -88,6 +88,6 @@ We will explore if using Leaky ReLU activation function instead of ReLU in the s
 | Leaky ReLU | % | % | % | % | % | % | % | % | % | % |
 
 
-| Layer | Average loss | Accuracy |
+| Function | Average loss | Accuracy |
 | :---: | :---: | :---: |
 | Leaky ReLU  |  | /10000 (%) |
