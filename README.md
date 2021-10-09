@@ -32,16 +32,13 @@ Set up the environment:
 docker build -t pytorch-stn . 
 ```
 
-Train and test the STN:
+Train and test the STN with different layers:
 ```sh
-docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=20
+docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=50
 ```
-
-Inputs arguments:
-
-- `--layer`: string, options: {`conv`, `coordconv`}.
-- `--function`: string, options: {`leakyrelu`}.
-- `--epochs`: integer, must be a positive number.
+```sh
+docker run -v "$(pwd):/app" pytorch-stn --layer='coordconv' --epochs=50
+```
 
 Output images: 
 - `imgs/stn.png`: visualize the batch of input images and the corresponding transformed batch using STN
@@ -84,10 +81,15 @@ In image classification we don't expect see much improvement, because Conv layer
 
 We will try to boost the performance, using Leaky ReLU activation function instead of ReLU in the spatial transformer network. We will include CoordConv layers as well. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. Let's verify if this condition could be a benefit to improve the performance. We will evaluate the performance following the same methodology than the previous experiments.
 
+Command to reproduce the experiment:
+
+```sh
+docker run -v "$(pwd):/app" pytorch-stn --function='leakyrelu' --epochs=50
+```
+
 | Activation | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Leaky ReLU | 99% | 99% | 99% | 99% | 99% | 98% | 99% | 99% | 99% | 98% |
-
 
 | Activation | Average loss | Accuracy |
 | :---: | :---: | :---: |
