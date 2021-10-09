@@ -40,6 +40,7 @@ docker run -v "$(pwd):/app" pytorch-stn --layer='conv' --epochs=20
 Inputs arguments:
 
 - `--layer`: string, options: {`conv`, `coordconv`}.
+- `--function`: string, options: {`leakyrelu`}.
 - `--epochs`: integer, must be a positive number.
 
 Output images: 
@@ -71,7 +72,7 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 
 As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the predictions broken down by each number.
 
-| Confusion Matrix Conv |  Confusion Matrix CoordConv |  
+| Confusion Matrix Conv Layer |  Confusion Matrix CoordConv Layer |  
 | :-------------------------:|:-------------------------:
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_50.png?raw=true) |
 
@@ -80,3 +81,19 @@ For this image classification problem, using the CoordConv layer doesn't improve
 In image classification we don't expect see much improvement, because Conv layers are actually designed to be spatially invariant. In image classification task, is not important to know in the image where object is, given that we want just to know what the image is.
 
 ## Exploring new ideas
+
+We will explore if using Leaky ReLU activation function instead of ReLU in the spatial transformer network, we could improve the performance. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same approach than the previous experiments.
+
+| Function | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Leaky ReLU | 99% | 99% | 99% | 99% | 99% | 98% | 99% | 99% | 99% | 98% |
+
+
+| Function | Average loss | Accuracy |
+| :---: | :---: | :---: |
+| Leaky ReLU  | 0.0293 | 9913/10000 (99%) |
+
+| Confusion Matrix Conv Layer |  Confusion Matrix Leaky ReLU Activation |  
+| :-------------------------:|:-------------------------:
+| ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_leakyrelu_50.png?raw=true) |
+
