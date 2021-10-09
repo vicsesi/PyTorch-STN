@@ -58,7 +58,7 @@ Following figure shows a comparison of 2D Conv and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers during 50 epochs. We will evaluate the accuracy for each number in MNIST dataset, and the average loss and the accuracy for the whole test set. Following tables shows the results:
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers and training the models during 50 epochs. We will evaluate the accuracy for each number in MNIST dataset, and the average loss and the accuracy for the whole test set. Following tables shows the results:
 
 | Layer | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -82,14 +82,14 @@ In image classification we don't expect see much improvement, because Conv layer
 
 ## Exploring new ideas
 
-We will explore if using Leaky ReLU activation function instead of ReLU in the spatial transformer network, we could improve the performance. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same approach than the previous experiments.
+We will explore if using Leaky ReLU activation function instead of ReLU in the spatial transformer network, we can improve the performance. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same methodology than the previous experiments.
 
-| Function | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| Activation | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Leaky ReLU | 99% | 99% | 99% | 99% | 99% | 98% | 99% | 99% | 99% | 98% |
 
 
-| Function | Average loss | Accuracy |
+| Activation | Average loss | Accuracy |
 | :---: | :---: | :---: |
 | Leaky ReLU  | 0.0293 | 9913/10000 (99%) |
 
@@ -97,3 +97,4 @@ We will explore if using Leaky ReLU activation function instead of ReLU in the s
 | :-------------------------:|:-------------------------:
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_leakyrelu_50.png?raw=true) |
 
+We observed that using Leaky ReLU activation functions in STN, doesn't improve the performance in classification task. Change the ReLU activation function by Leaky ReLU, doesn't affect significantly to the performance.
