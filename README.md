@@ -57,7 +57,7 @@ Following figure shows a comparison of 2D Conv and CoordConv layers.
 
 ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/layers.png?raw=true)
 
-Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers, with 50 epochs during the training. We will evaluate the models with the average loss and accuracy. Following tables shows the results:
+Uber AI paper suggest that including CoordConv layers can boost the performance. In order to verify this hypothesis, we will compare the performance using Conv and CoordConv layers during 50 epochs. We will evaluate the accuracy for each number in MNIST dataset, and the average loss and the accuracy for the whole test set. Following tables shows the results:
 
 | Layer | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -68,6 +68,8 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 | :---: | :---: | :---: |
 | Conv | 0.0296 | 9921/10000 (%) |
 | CoordConv | 0.0312 | 9908/10000 (%) |
+
+As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the correct and incorrect predictions broken down by each number.
 
 | Confusion Matrix Conv |  Confusion Matrix CoordConv |  
 | :-------------------------:|:-------------------------:
