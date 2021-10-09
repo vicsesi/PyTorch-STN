@@ -72,7 +72,7 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 
 As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the predictions broken down by each number.
 
-| Confusion Matrix Conv |  Confusion Matrix CoordConv |  
+| Confusion Matrix Conv Layer |  Confusion Matrix CoordConv Layer |  
 | :-------------------------:|:-------------------------:
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_50.png?raw=true) |
 
@@ -86,9 +86,14 @@ We will explore if using Leaky ReLU activation function instead of ReLU in the s
 
 | Function | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Leaky ReLU | % | % | % | % | % | % | % | % | % | % |
+| Leaky ReLU | 99% | 99% | 99% | 99% | 99% | 98% | 99% | 99% | 99% | 98% |
 
 
 | Function | Average loss | Accuracy |
 | :---: | :---: | :---: |
-| Leaky ReLU  |  | /10000 (%) |
+| Leaky ReLU  | 0.0293 | 9913/10000 (99%) |
+
+| Confusion Matrix Conv Layer |  Confusion Matrix Leaky ReLU Activation |  
+| :-------------------------:|:-------------------------:
+| ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_leakyrelu_50.png?raw=true) |
+
