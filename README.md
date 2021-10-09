@@ -69,7 +69,7 @@ Uber AI paper suggest that including CoordConv layers can boost the performance.
 | Conv | 0.0296 | 9921/10000 (%) |
 | CoordConv | 0.0312 | 9908/10000 (%) |
 
-As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the correct and incorrect predictions broken down by each number.
+As we can see on the previous tables, the performances using Conv and CoordConv layers are pretty similar. We will compute the confusion matrix in order to summarize the predictions broken down by each number.
 
 | Confusion Matrix Conv |  Confusion Matrix CoordConv |  
 | :-------------------------:|:-------------------------:
