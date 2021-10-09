@@ -82,7 +82,7 @@ In image classification we don't expect see much improvement, because Conv layer
 
 ## Exploring new ideas
 
-We will explore if using Leaky ReLU activation function instead of ReLU in the spatial transformer network using CoordConv layers, we can improve the performance. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same methodology than the previous experiments.
+We will try to improve the performance, using Leaky ReLU activation function instead of ReLU in the spatial transformer network. We will include CoordConv layers as well. The derivative of Leaky ReLU is not a 0 in the negative part, and this activation function have a little slope to allow the gradients to flow on. We will evaluate the performance following the same methodology than the previous experiments.
 
 | Activation | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
