@@ -76,3 +76,8 @@ As we can see on the previous tables, the performances using Conv and CoordConv 
 | ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_conv_50.png?raw=true) |  ![alt text](https://github.com/vicsesi/Pytorch-STN/blob/main/imgs/cm_coordconv_50.png?raw=true) |
 
 For this image classification problem, using the CoordConv layer doesn't improve the performance in classification task. Although the previous tables shows that the accuracy is slightly worse in predictions with CoordConv layer during 50 epochs, we've also evaluated the performance with less number of epochs. All of the experiments shown that the accuracy does not improve considerably using CoordConv layers.
+
+
+## Exploring new ideas
+
+Spatial Transformerr Netwirks can be placed into CNNs to benefit various tasks. A spatial transformer crops out, transforms and scales the region of interest in the sample.
